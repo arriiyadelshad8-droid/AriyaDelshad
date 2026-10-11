@@ -1,0 +1,202 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0a1020;
+    --surface: #131d33;
+    --border: #2c3b5b;
+    --text: #edf2ff;
+    --muted: #aab6d0;
+    --accent: #91a4ff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at top, #202d52, transparent 55%),
+        var(--background);
+    color: var(--text);
+    font-family: Arial;
+    line-height: 2;
+}
+
+.hero {
+    padding: 70px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 15px auto;
+    font-size: clamp(27px, 5vw, 44px);
+    line-height: 1.7;
+}
+
+.subtitle {
+    color: var(--muted);
+    max-width: 700px;
+    margin: auto;
+}
+
+.research {
+    width: min(900px, 92%);
+    margin: 40px auto;
+}
+
+.research-section {
+    margin-bottom: 28px;
+    padding: clamp(18px, 4vw, 35px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px #00000018;
+}
+
+.research-section h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding-right: 14px;
+    border-right: 4px solid var(--accent);
+    color: #b8c5ff;
+    font-size: 23px;
+}
+
+.research-section p {
+    margin: 15px 0;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+figure {
+    margin: 28px 0 0;
+    padding: 12px;
+    background: #0b1428;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+figcaption {
+    padding: 10px 5px 2px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.sources {
+    border-right: 4px solid #7888c8;
+}
+
+footer {
+    padding: 25px;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+#printButton {
+    display: block;
+    margin: 25px auto 40px;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #10182d;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#printButton:hover {
+    background: #b1bdff;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .research {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    .research-section h2 {
+        font-size: 20px;
+    }
+}
+
+@media print {
+    @page {
+        margin: 15mm;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    .hero,
+    .research-section,
+    figure {
+        background: white;
+        color: black;
+        box-shadow: none;
+    }
+
+    .hero {
+        padding: 15px 0;
+    }
+
+    .hero h1,
+    .research-section h2 {
+        color: black;
+    }
+
+    .research {
+        width: 100%;
+        margin: 0;
+    }
+
+    .research-section {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+        margin-bottom: 15px;
+    }
+
+    figure {
+        border-color: #ddd;
+    }
+
+    figcaption,
+    .subtitle,
+    footer {
+        color: #444;
+    }
+
+    #printButton {
+        display: none;
+    }
+}
